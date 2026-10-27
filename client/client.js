@@ -70,7 +70,7 @@ window.__ModuleLoader__.load({
       cursor: 'pointer',
       opacity: '0.75',
     };
-    const NOTE_STYLE = { fontSize: '0.8em', opacity: '0.8', maxWidth: '18em', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' };
+    const NOTE_STYLE = { fontSize: '0.8em', opacity: '0.8', maxWidth: '32em', whiteSpace: 'normal', wordBreak: 'break-word', textAlign: 'left' };
     const BUSY_SPIN_STYLE = { display: 'inline-block', animation: 'dsh-input-polish-spin 1s linear infinite' };
 
     // One keyframes rule per document; the animation is cosmetic, so a failure
@@ -129,7 +129,9 @@ window.__ModuleLoader__.load({
           .then(async (response) => {
             const payload = await response.json().catch(() => null);
             if (!response.ok || payload === null || payload.ok !== true || typeof payload.text !== 'string') {
-              setNote(`${TEXT.failed}: ${(payload !== null && payload.error) || response.status}`);
+              const detail = `${TEXT.failed}: ${(payload !== null && payload.error) || response.status}`;
+              console.error('[input-polish]', detail);
+              setNote(detail);
               return;
             }
             if (payload.text.trim() !== '' && payload.text !== draft && typeof inputActions.setDraft === 'function') {
@@ -137,7 +139,9 @@ window.__ModuleLoader__.load({
             }
           })
           .catch((error) => {
-            setNote(`${TEXT.failed}: ${String((error !== undefined && error !== null && error.message) || error)}`);
+            const detail = `${TEXT.failed}: ${String((error !== undefined && error !== null && error.message) || error)}`;
+            console.error('[input-polish]', detail);
+            setNote(detail);
           })
           .then(() => {
             setBusy(false);
