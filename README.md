@@ -73,7 +73,7 @@ client/client.js 浏览器半边：手写的预构建 bundle（window.__ModuleLo
 ```sh
 node --check lib/index.js
 node --check client/client.js
-npm test          # 纯函数单测：提示词拼装、上下文压平、输出解包、流块取文
+npm test          # 18 项 host 纯函数 + 13 项客户端外壳/注册冒烟测试
 ```
 
 ## 已知限制

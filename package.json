@@ -1,6 +1,6 @@
 {
   "name": "@ruaibeite/dsh-input-polish",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Rewrite the composer draft with the model, in place: a ✨ button in the composer's trailing controls that turns a rough draft into a clear request, using the conversation as context.",
   "license": "MIT",
   "type": "module",
@@ -42,7 +42,7 @@
     "node": ">=20"
   },
   "scripts": {
-    "test": "node test/prompt.mjs"
+    "test": "node test/prompt.mjs && node test/client.mjs"
   },
   "dsh": {
     "bundle": {
