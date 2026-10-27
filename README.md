@@ -49,7 +49,6 @@ dsh plugin --profile <你的 profile> add github:ruaibeite/dsh-input-polish
       config:
         timeoutMs: 45000        # 单次改写的最长时间，超时返回 504、草稿不动
         maxInputChars: 8000     # 超过就拒绝（413），避免把整份文件塞进提示
-        maxOutputTokens: 2048   # 改写结果的上限
         contextMessages: 8      # 参考上下文取最近几条消息；0 = 不带上下文
         temperature: 0.2        # 低温度，改写要稳
 ```

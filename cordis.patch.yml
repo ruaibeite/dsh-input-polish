@@ -10,6 +10,5 @@
       config:
         timeoutMs: 45000
         maxInputChars: 8000
-        maxOutputTokens: 2048
         contextMessages: 8
         temperature: 0.2
