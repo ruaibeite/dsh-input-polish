@@ -1,0 +1,15 @@
+# dsh bundle patch: inserts this plugin into a profile's layer stack.
+#
+# `dsh plugin --profile <name> add <package>` reconciles `dsh.profile.bundles`
+# against installed packages and, seeing this declaration, appends the package
+# to the bundle stack. The profile boot then merges THIS patch (a single
+# `insert` of the plugin row), so no profile file needs editing by hand.
+- insert:
+    - id: input-polish
+      name: '@ruaibeite/dsh-input-polish'
+      config:
+        timeoutMs: 45000
+        maxInputChars: 8000
+        maxOutputTokens: 2048
+        contextMessages: 8
+        temperature: 0.2

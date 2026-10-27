@@ -1,0 +1,61 @@
+{
+  "name": "@ruaibeite/dsh-input-polish",
+  "version": "0.1.0",
+  "description": "Rewrite the composer draft with the model, in place: a ✨ button in the composer's trailing controls that turns a rough draft into a clear request, using the conversation as context.",
+  "license": "MIT",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./client/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/",
+    "client/",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruaibeite/dsh-input-polish.git"
+  },
+  "homepage": "https://github.com/ruaibeite/dsh-input-polish#readme",
+  "bugs": {
+    "url": "https://github.com/ruaibeite/dsh-input-polish/issues"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "composer",
+    "prompt",
+    "rewrite",
+    "polish"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node test/prompt.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.5"
+  }
+}
