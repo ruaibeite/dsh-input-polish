@@ -10,4 +10,5 @@
       config:
         timeoutMs: 45000
         maxInputChars: 8000
-        contextMessages: 8
+        contextMessages: 6
+        contextScan: 60
